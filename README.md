@@ -81,14 +81,28 @@ listings_df = pd.read_csv(listings_file)
 
 
 ## Clean
-- All three dataframes are cleaned using the following commands:
+- We took our data from the three CSV files - Reviews, Listings, Calendar - and created a set of rules or objectives in order to transform them into what we wanted.
+Our objective was to create a list of top-rated airbnb listings in and around Boston with relevant booking information for prospective, hypothetical clients. We decided that we wanted to only have the clean data with these specifications:
 
-  i. "drop_duplicates" to remove all duplicate entries in each dataframe
-  ii. "to_datetime" to convert columns to datetime format that are initially registered as strings
-  iii. "rename" to change column titles so that all column titles are lower case, contain zero spaces, and are overall clearly written
-  iv. "dropna" to drop rows that have N/As in critical columns (e.g. if rows do not have information listed in their primary key figures)
-  v. "merge" to establish foreign key figures in tables where there is not a foreign key originally listed. The same command is also used to test if two tables can be linked together in a schema
-  vi. "assign" in order to establish primary keys in tables where primary keys are not originally listed
+  1. We wanted only quantifying information in our dataset, no comments, review blurbs, etc.
+  2. Specific information on reviewers of listings or their reviews were not included
+  3. We wanted Airbnb listings with ratings greater than 90.
+  4. We wanted data to be in specific formats. Dates in datetime, numbers in int etc.
+  5. Full information: no empty cells.
+
+- We cleaned up our data as follows:
+
+  reviews.csv
+
+  Dropped any data with empty data cells. Eliminated the “comments” column. Converted the string dates to datetime format. Grouped data by listing_id for easier access. Looked at review counts by listing id
+
+  calendar csv
+
+  Converted string dates to datetime format. Converted available data output to boolean. Cleaned price column to clean numeric values.
+
+  Listing.csv
+
+  Merged with calendar on listing id. Eliminated 91 irrelevant columns. Dropped any duplicates and empty rows. Filtered data, leaving listings with ratings greater than 90. Dropped any duplicate listings/dates, only keeping the latest ones. Important columns: "id", "listing_url", "name", "price_y", "number_of_reviews", "review_scores_rating", "date", "available"
   
 
    
