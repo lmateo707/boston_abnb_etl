@@ -20,12 +20,20 @@
 - Data is extracted from the four CSV files in the "Resources" folder
 - Python code to extract data from the CSV files is listed below:
 
-1. 
+1. reviews.csv
 ```
 file_to_load = "Resources/reviews.csv"
-# Read Purchasing File and store into Pandas data frame
 review_data = pd.read_csv(file_to_load,encoding="utf8")
-review_data.head()
+```
+2. calendar.csv
+```
+calendar_csv = "Resources/calendar.csv"
+calendar_df = pd.read_csv(calendar_csv,encoding="utf8")
+```
+3. listings.csv
+```
+listings_file = "Resources/listings.csv"
+listings_df = pd.read_csv(listings_file)
 ```
 
 ## Transform
