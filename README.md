@@ -111,7 +111,17 @@ Our objective was to create a list of top-rated airbnb listings in and around Bo
 ## Load
 
 SQL: Create the Schema
-- Data is organized into a schema of three tables (reviews, listings, and calendars)
+- We decided to choose 2 tables for the end product: reviews and listings, where listings was a joined table between “calendar” and “listings”.
+
+- We decided on formatting the information into these 2 tables with the following reasons:
+
+    - We wanted one table, listings, to show the quick summary information that we thought our hypothetical clients wanted to see, so that they could make a quick decision to bookings.
+    - We also wanted another table that gave them access to the review information, reviews, just in case they would be interested in viewing that, without having an overwhelming amount of data.
+
+- We decided to load these 2 tables in SQL for these reasons:
+
+    - SQL has power to easily manage and filter our relatively large dataset.
+    - Our 2 datasets have a specific data relationship, and we thought it best to use SQL to store this relationship.
 - Created the following in MySQL to create schema:
     -  Calendar table
     ```
