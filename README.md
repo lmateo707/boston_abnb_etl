@@ -92,17 +92,17 @@ Our objective was to create a list of top-rated airbnb listings in and around Bo
 
 - We cleaned up our data as follows:
 
-  reviews.csv
+  - reviews.csv
 
-  Dropped any data with empty data cells. Eliminated the “comments” column. Converted the string dates to datetime format. Grouped data by listing_id for easier access. Looked at review counts by listing id
+    Dropped any data with empty data cells. Eliminated the “comments” column. Converted the string dates to datetime format. Grouped data by listing_id for easier access. Looked at review counts by listing id
 
-  calendar csv
+  - calendar csv
 
-  Converted string dates to datetime format. Converted available data output to boolean. Cleaned price column to clean numeric values.
+    Converted string dates to datetime format. Converted available data output to boolean. Cleaned price column to clean numeric values.
 
-  Listing.csv
+  - Listing.csv
 
-  Merged with calendar on listing id. Eliminated 91 irrelevant columns. Dropped any duplicates and empty rows. Filtered data, leaving listings with ratings greater than 90. Dropped any duplicate listings/dates, only keeping the latest ones. Important columns: "id", "listing_url", "name", "price_y", "number_of_reviews", "review_scores_rating", "date", "available"
+    Merged with calendar on listing id. Eliminated 91 irrelevant columns. Dropped any duplicates and empty rows. Filtered data, leaving listings with ratings greater than 90. Dropped any duplicate listings/dates, only keeping the latest ones. Important columns: "id", "listing_url", "name", "price_y", "number_of_reviews", "review_scores_rating", "date", "available"
   
 
    
