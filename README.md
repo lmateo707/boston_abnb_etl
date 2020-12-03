@@ -37,6 +37,47 @@ listings_df = pd.read_csv(listings_file)
 ```
 
 ## Transform
+- Python is used to create tables using only the relevant columns:
+i. Reviews table:
+#drop non applicable variables
+```
+review_clean = review_data.dropna()
+```
+#convert to datetime
+```
+review_cln = review_clean.drop(['comments'],axis=1)
+review_cln["date"]=pd.to_datetime(review_cln["date"])
+```
+#groupby listing_id
+```
+review_grouped = review_cln.groupby(['listing_id'])
+```
+
+ii. Calendar Table
+#rename and convert to datetime
+```
+calendar_df.rename(index=str,columns={"date":"date"},inplace=True)
+calendar_df["date"]=pd.to_datetime(calendar_df["date"])
+```
+#concert to boolean
+```
+calendar_df["available"].replace(["t","f"], [True,False], inplace=True)
+```
+# Remove dollar sign and convert the price column to numeric values
+```
+# remove dollar sign
+calendar_df["price"] = calendar_df["price"].replace({'\$': '', ',': ''}, regex=True)
+calendar_df["price"] = pd.to_numeric(calendar_df["price"])
+calendar_df.head()
+```
+
+iii. Listings table
+# merge listings and calendar
+```
+listings_calendar_df = listings_df.merge(calendar_df, left_on='id', right_on='listing_id')
+```
+
+
 
 ## Clean
 
