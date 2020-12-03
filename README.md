@@ -72,6 +72,7 @@ listings_df = pd.read_csv(listings_file)
   ```
 
   iii. Listings table
+  
   #merge listings and calendar
   ```
   listings_calendar_df = listings_df.merge(calendar_df, left_on='id', right_on='listing_id')
