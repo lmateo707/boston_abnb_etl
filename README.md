@@ -81,5 +81,21 @@ listings_df = pd.read_csv(listings_file)
 
 
 ## Clean
+- All three dataframes are cleaned using the following commands:
+
+  i. "drop_duplicates" to remove all duplicate entries in each dataframe
+  ii. "to_datetime" to convert columns to datetime format that are initially registered as strings
+  iii. "rename" to change column titles so that all column titles are lower case, contain zero spaces, and are overall clearly written
+  iv. "dropna" to drop rows that have N/As in critical columns (e.g. if rows do not have information listed in their primary key figures)
+  v. "merge" to establish foreign key figures in tables where there is not a foreign key originally listed. The same command is also used to test if two tables can be linked together in a schema
+  vi. "assign" in order to establish primary keys in tables where primary keys are not originally listed
+  
+  
+ - Below is the Python code to clean each of the four dataframes:
+  i. Reviews dataframe:
+    ```
+    
+ 
+
 
 ## Load
