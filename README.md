@@ -63,9 +63,9 @@ calendar_df["date"]=pd.to_datetime(calendar_df["date"])
 ```
 calendar_df["available"].replace(["t","f"], [True,False], inplace=True)
 ```
-# Remove dollar sign and convert the price column to numeric values
+#Remove dollar sign and convert the price column to numeric values
 ```
-# remove dollar sign
+
 calendar_df["price"] = calendar_df["price"].replace({'\$': '', ',': ''}, regex=True)
 calendar_df["price"] = pd.to_numeric(calendar_df["price"])
 calendar_df.head()
