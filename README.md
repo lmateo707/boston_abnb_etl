@@ -72,7 +72,7 @@ calendar_df.head()
 ```
 
 iii. Listings table
-# merge listings and calendar
+#merge listings and calendar
 ```
 listings_calendar_df = listings_df.merge(calendar_df, left_on='id', right_on='listing_id')
 ```
